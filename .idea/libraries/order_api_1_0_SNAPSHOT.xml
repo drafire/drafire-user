@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="order-api-1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../drafire-order/order-api/target/order-api-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
