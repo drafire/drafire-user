@@ -6,11 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="drafire-user" />
+        <module name="drafire-user-provider" />
+        <module name="driafire-user-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="drafire-user" target="1.7" />
+      <module name="drafire-user-provider" target="1.7" />
+      <module name="drafireuserapi" target="1.7" />
+      <module name="driafire-user-api" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

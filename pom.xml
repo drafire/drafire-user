@@ -6,9 +6,14 @@
 
   <groupId>com.drafire</groupId>
   <artifactId>drafire-user</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+      <module>drafire-user-provider</module>
+      <module>drafire-user-api</module>
+    </modules>
 
-  <name>drafire-user</name>
+    <name>drafire-user</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -19,44 +24,79 @@
   </properties>
 
   <dependencies>
-
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>dubbo</artifactId>
-      <version>2.5.3</version>
-    </dependency>
-    <dependency>
-      <groupId>com.github.sgroschupf</groupId>
-      <artifactId>zkclient</artifactId>
-      <version>0.1</version>
-    </dependency>
-
-    <!--支持hessian协议需要的jar包开始-->
-    <dependency>
-      <groupId>com.caucho</groupId>
-      <artifactId>hessian</artifactId>
-      <version>4.0.38</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mortbay.jetty</groupId>
-      <artifactId>jetty</artifactId>
-      <version>6.1.26</version>
-    </dependency>
-    <!--支持hessian协议需要的jar包介绍-->
   </dependencies>
 
+  <dependencyManagement>
+    <dependencies>
+      <!--spiring支持包开始-->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>4.3.10.RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>4.3.10.RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.3.10.RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context-support</artifactId>
+        <version>4.3.10.RELEASE</version>
+      </dependency>
+      <!--spring支持包结束-->
+
+      <!--dubbo依赖包开始-->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>2.5.3</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <!--dubbo依赖包结束-->
+
+      <!--zokeeper依赖包开始-->
+      <dependency>
+        <groupId>com.github.sgroschupf</groupId>
+        <artifactId>zkclient</artifactId>
+        <version>0.1</version>
+      </dependency>
+      <!--zookeeper依赖包结束-->
+
+      <!--hessian依赖包开始-->
+      <dependency>
+        <groupId>com.caucho</groupId>
+        <artifactId>hessian</artifactId>
+        <version>4.0.38</version>
+      </dependency>
+      <!--hessian依赖包结束-->
+
+      <!--aip依赖包结束-->
+      <dependency>
+        <artifactId>drafire-user-api</artifactId>
+        <groupId>com.drafire</groupId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <!--api依赖包结束-->
+
+    </dependencies>
+  </dependencyManagement>
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>

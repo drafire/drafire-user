@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd" default-autowire="byName">
+
+    <!--开启注解支持 如果是spring boot，会自动支持-->
+    <context:annotation-config/>
+    <!--开启扫描-->
+    <context:component-scan base-package="com.drafire.user"/>
+
+    <!--当前项目在整个分布式架构里面的唯一名称，计算依赖关系的标签-->
+    <dubbo:application name="user-provider" owner="drafire"/>
+
+    <!--dubbo这个服务所要暴露的服务地址所对应的注册中心-->
+    <dubbo:registry protocol="zookeeper" address="192.168.141.128:2181,192.168.141.129:2181,192.168.141.130:2181,192.168.141.131:2181"/>
+
+    <!--指定dubbo发布的协议、端口、host地址-->
+    <dubbo:protocol name="dubbo" port="20880" host="192.168.0.102"/>
+
+    <!--配置要发布的协议-->
+    <dubbo:service interface="com.drafire.user.IUserService" ref="userServide"/>
+</beans>
