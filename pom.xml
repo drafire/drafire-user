@@ -32,6 +32,7 @@
     </dependency>
   </dependencies>
 
+  <!--添加项目包管理，在子项目中只需要添加对应的jar包即可-->
   <dependencyManagement>
     <dependencies>
       <!--spiring支持包开始-->
