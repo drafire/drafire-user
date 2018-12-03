@@ -96,6 +96,13 @@
       </dependency>
       <!--api依赖包结束-->
 
+<!--activemq依赖包开始-->
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>activemq-all</artifactId>
+        <version>5.15.0</version>
+      </dependency>
+      <!--activemq依赖包结束-->
     </dependencies>
   </dependencyManagement>
   <build>
