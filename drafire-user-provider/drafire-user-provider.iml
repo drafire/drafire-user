@@ -35,5 +35,6 @@
     <orderEntry type="library" name="Maven: org.jboss.netty:netty:3.2.5.Final" level="project" />
     <orderEntry type="library" name="Maven: com.drafire:drafire-user-api:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.apache.activemq:activemq-all:5.15.0" level="project" />
+    <orderEntry type="module" module-name="drafire-user" />
   </component>
 </module>

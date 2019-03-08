@@ -19,10 +19,10 @@
     <dubbo:application name="user-provider" owner="drafire"/>
 
     <!--dubbo这个服务所要暴露的服务地址所对应的注册中心-->
-    <dubbo:registry protocol="zookeeper" address="192.168.141.128:2181,192.168.141.129:2181,192.168.141.130:2181,192.168.141.131:2181"/>
+    <dubbo:registry protocol="zookeeper" address="192.168.109.128:2181,192.168.109.129:2181,192.168.109.130:2181,192.168.141.109:2181"/>
 
     <!--指定dubbo发布的协议、端口、host地址-->
-    <dubbo:protocol name="dubbo" port="20881" host="192.168.0.102"/>
+    <dubbo:protocol name="dubbo" port="20881" host="10.100.97.26"/>
 
     <!--配置要发布的协议-->
     <dubbo:service interface="com.drafire.user.IUserService" ref="userServide"/>
